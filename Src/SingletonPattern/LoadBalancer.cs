@@ -7,7 +7,7 @@ namespace SingletonPattern
     {
         private static volatile LoadBalancer _instance;
         private List<string> Servers { get; set; }
-        protected LoadBalancer()
+        private LoadBalancer()
         {
             Servers = new List<string> { "Serve 1", "Serve 2", "Serve 3", "Serve 4" };
         }
