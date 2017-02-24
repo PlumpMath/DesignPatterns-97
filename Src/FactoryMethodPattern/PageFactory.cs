@@ -12,7 +12,7 @@ namespace FactoryMethodPattern
             Pages = new List<Page>();
             this.CreatePages();
         }
-        public abstract void CreatePages();
+        public abstract void CreatePages();//this is factory method
 
         public string Print()
         {
@@ -27,7 +27,7 @@ namespace FactoryMethodPattern
 
     public class WebsiteFactory : PageFactory
     {
-
+        //implemintaion for factory method
         public override void CreatePages()
         {
             Pages.Add(new HomePage());
@@ -37,7 +37,7 @@ namespace FactoryMethodPattern
 
     public class ResumeFactory : PageFactory
     {
-
+        //implemintaion for factory method
         public override void CreatePages()
         {
             Pages.Add(new SkillPage());

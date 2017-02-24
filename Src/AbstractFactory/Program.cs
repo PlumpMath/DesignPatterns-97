@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data.Common;
 
 namespace AbstractFactory
 {
@@ -7,7 +6,7 @@ namespace AbstractFactory
     {
         static void Main(string[] args)
         {
-            string conection =
+            /*string conection =
                 "Server=(localdb)\\mssqllocaldb;Database=WatchHorseTV;Trusted_Connection=True;MultipleActiveResultSets=true";
 
             Database db;
@@ -20,7 +19,12 @@ namespace AbstractFactory
             {
                 Console.WriteLine($"{r.GetString(r.GetOrdinal("firstname"))} {r.GetString(r.GetOrdinal("lastname"))}");
             }
-            db.Connection.Close();
+            db.Connection.Close();*/
+            var pepoleFactory = new PepoleFactory();
+            IPepole p1 = pepoleFactory.GetPepole(PepoleType.Villagers);
+            Console.WriteLine(p1.GetName());
+            p1 = pepoleFactory.GetPepole(PepoleType.CityPeople);
+            Console.WriteLine(p1.GetName());
         }
     }
 }
